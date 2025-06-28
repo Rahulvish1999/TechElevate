@@ -1,27 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TechElevate | CCNA Learning Portal" />
-    <title>TechElevate - CCNA Learning Portal</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechElevate CCNA Learning Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Login Screen -->
+    <section id="login-section" class="centered">
+      <h1>TechElevate CCNA Portal</h1>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Enter your username" required />
+        <select id="role" required>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+    </section>
 
-    <!-- Optional: Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 text-gray-900">
-    <div id="root"></div>
+    <!-- Main Dashboard -->
+    <section id="dashboard" class="hidden">
 
-    <!-- React App Entry -->
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      <nav id="navbar">
+        <h2 id="welcome-msg"></h2>
+        <button id="logout-btn">Logout</button>
+      </nav>
+
+      <div id="main-container">
+        <!-- Left Sidebar for Student Activities -->
+        <aside id="sidebar" class="hidden">
+          <h3>Daily Activities</h3>
+          <ul id="activities-list"></ul>
+          <input type="text" id="activity-input" placeholder="Add new activity" />
+          <button id="add-activity-btn">Add Activity</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+          <!-- Teacher View -->
+          <section id="teacher-view" class="hidden">
+
+            <h3>Post Study Materials</h3>
+            <form id="post-material-form">
+              <input type="text" id="material-title" placeholder="Title" required />
+              <input type="url" id="material-url" placeholder="PDF/Image URL" required />
+              <textarea id="material-desc" placeholder="Description (optional)"></textarea>
+              <button type="submit">Post Material</button>
+            </form>
+
+            <h3>Posted Materials</h3>
+            <input type="text" id="search-materials" placeholder="Search materials..." />
+            <ul id="materials-list"></ul>
+
+            <h3>Student Questions</h3>
+            <ul id="questions-list"></ul>
+          </section>
+
+          <!-- Student View -->
+          <section id="student-view" class="hidden">
+
+            <h3>Study Materials</h3>
+            <input type="text" id="search-student-materials" placeholder="Search materials..." />
+            <ul id="student-materials-list"></ul>
+
+            <h3>Ask a Question</h3>
+            <form id="ask-question-form">
+              <textarea id="question-text" placeholder="Type your question here..." required></textarea>
+              <button type="submit">Ask Question</button>
+            </form>
+
+            <h3>Your Questions & Answers</h3>
+            <ul id="student-questions-list"></ul>
+
+            <h3>Mark Your Progress</h3>
+            <form id="progress-form">
+              <input type="text" id="progress-text" placeholder="Describe progress made..." required />
+              <button type="submit">Add Progress</button>
+            </form>
+            <ul id="progress-list"></ul>
+
+          </section>
+        </main>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
