@@ -3,93 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TechElevate CCNA Learning Portal</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>TechElevate - Learn CCNA</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="app">
+  <header>
+    <h1>TechElevate - Learn CCNA Certification</h1>
+    <nav>
+      <ul>
+        <li><a href="#progress">Student Progress</a></li>
+        <li><a href="#learn">Learn CCNA Topics</a></li>
+        <li><a href="#qa">Questions & Answers</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Login Screen -->
-    <section id="login-section" class="centered">
-      <h1>TechElevate CCNA Portal</h1>
-      <form id="login-form">
-        <input type="text" id="username" placeholder="Enter your username" required />
-        <select id="role" required>
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-        <button type="submit">Login</button>
+  <main>
+    <!-- Student Progress Section -->
+    <section id="progress">
+      <h2>Daily Student Progress</h2>
+      <form id="progress-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+        
+        <label for="progress-text">Progress Description:</label>
+        <textarea id="progress-text" rows="3" placeholder="What did you learn today?" required></textarea>
+        
+        <button type="submit">Add Progress</button>
       </form>
-    </section>
-
-    <!-- Main Dashboard -->
-    <section id="dashboard" class="hidden">
-
-      <nav id="navbar">
-        <h2 id="welcome-msg"></h2>
-        <button id="logout-btn">Logout</button>
-      </nav>
-
-      <div id="main-container">
-        <!-- Left Sidebar for Student Activities -->
-        <aside id="sidebar" class="hidden">
-          <h3>Daily Activities</h3>
-          <ul id="activities-list"></ul>
-          <input type="text" id="activity-input" placeholder="Add new activity" />
-          <button id="add-activity-btn">Add Activity</button>
-        </aside>
-
-        <!-- Main Content -->
-        <main id="main-content">
-          <!-- Teacher View -->
-          <section id="teacher-view" class="hidden">
-
-            <h3>Post Study Materials</h3>
-            <form id="post-material-form">
-              <input type="text" id="material-title" placeholder="Title" required />
-              <input type="url" id="material-url" placeholder="PDF/Image URL" required />
-              <textarea id="material-desc" placeholder="Description (optional)"></textarea>
-              <button type="submit">Post Material</button>
-            </form>
-
-            <h3>Posted Materials</h3>
-            <input type="text" id="search-materials" placeholder="Search materials..." />
-            <ul id="materials-list"></ul>
-
-            <h3>Student Questions</h3>
-            <ul id="questions-list"></ul>
-          </section>
-
-          <!-- Student View -->
-          <section id="student-view" class="hidden">
-
-            <h3>Study Materials</h3>
-            <input type="text" id="search-student-materials" placeholder="Search materials..." />
-            <ul id="student-materials-list"></ul>
-
-            <h3>Ask a Question</h3>
-            <form id="ask-question-form">
-              <textarea id="question-text" placeholder="Type your question here..." required></textarea>
-              <button type="submit">Ask Question</button>
-            </form>
-
-            <h3>Your Questions & Answers</h3>
-            <ul id="student-questions-list"></ul>
-
-            <h3>Mark Your Progress</h3>
-            <form id="progress-form">
-              <input type="text" id="progress-text" placeholder="Describe progress made..." required />
-              <button type="submit">Add Progress</button>
-            </form>
-            <ul id="progress-list"></ul>
-
-          </section>
-        </main>
+      
+      <div id="progress-list">
+        <h3>Your Progress History</h3>
+        <ul></ul>
       </div>
     </section>
 
-  </div>
+    <!-- Learn CCNA Certification Topics -->
+    <section id="learn">
+      <h2>Learn CCNA Topics</h2>
+      <div id="ccna-content">
+        <p>Welcome! Here you will find the latest CCNA study materials.</p>
+        <!-- Example content -->
+        <article>
+          <h3>Introduction to Networking</h3>
+          <p>This topic covers basics of networking, OSI model, and network devices.</p>
+        </article>
+        <article>
+          <h3>IP Addressing and Subnetting</h3>
+          <p>Learn how to calculate and understand IP addressing and subnet masks.</p>
+        </article>
+      </div>
+      <!-- You can later add an admin area to post content -->
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Questions and Answers Section -->
+    <section id="qa">
+      <h2>Questions & Answers</h2>
+      <form id="question-form">
+        <label for="question">Ask a Question:</label>
+        <textarea id="question" rows="3" placeholder="Type your question here" required></textarea>
+        <button type="submit">Post Question</button>
+      </form>
+      
+      <div id="questions-list">
+        <h3>All Questions</h3>
+        <ul></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TechElevate</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
